@@ -26,21 +26,21 @@ export async function generatePdf (e) {
         y: y,
         size: 11,
         font: font,
-        color: rgb(0.95, 0.1, 0.1),
+        color: rgb(0.95, 0.1, 0.1)
       })
       drawText(`${x}`, {
         x: x + 3,
         y: y,
         size: 7,
         font: font,
-        color: rgb(0, 0, 0),
+        color: rgb(0, 0, 0)
       })
       drawText(`${y}`, {
         x: x + 3,
         y: y - 6,
         size: 7,
         font: font,
-        color: rgb(0, 0, 0),
+        color: rgb(0, 0, 0)
       })
     }
   }

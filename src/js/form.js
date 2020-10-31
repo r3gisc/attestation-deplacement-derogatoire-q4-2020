@@ -14,8 +14,8 @@ const createTitle = () => {
 // createElement('div', { className: 'form-group' })
 
 const getCurrentTime = () => {
-  const date = new Date();
-  return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+  const date = new Date()
+  return date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
 }
 
 const createFormGroup = ({
@@ -30,13 +30,13 @@ const createFormGroup = ({
   name,
   pattern,
   placeholder = '',
-  type = 'text',
+  type = 'text'
 }) => {
   const formGroup = createElement('div', { className: 'form-group' })
   const labelAttrs = {
     for: `field-${name}`,
     id: `field-${name}-label`,
-    innerHTML: label,
+    innerHTML: label
   }
   const labelEl = createElement('label', labelAttrs)
 
@@ -55,7 +55,7 @@ const createFormGroup = ({
     pattern,
     placeholder,
     required: true,
-    type,
+    type
   }
 
   const input = createElement('input', inputAttrs)
@@ -65,7 +65,7 @@ const createFormGroup = ({
   }
 
   const validityAttrs = {
-    className: 'validity',
+    className: 'validity'
   }
   const validity = createElement('span', validityAttrs)
 
@@ -91,7 +91,7 @@ const createReasonField = (reasonData) => {
     type: 'checkbox',
     id,
     name: 'field-reason',
-    value: reasonData.code,
+    value: reasonData.code
   }
   const inputReason = createElement('input', inputReasonAttrs)
 
@@ -105,7 +105,7 @@ const createReasonField = (reasonData) => {
 const createReasonFieldset = (reasonsData) => {
   const fieldsetAttrs = {
     id: 'reason-fieldset',
-    className: 'fieldset',
+    className: 'fieldset'
   }
 
   const fieldset = createElement('fieldset', fieldsetAttrs)
@@ -113,7 +113,7 @@ const createReasonFieldset = (reasonsData) => {
 
   const legendAttrs = {
     className: 'legend titre-3',
-    innerHTML: 'Choisissez un motif de déplacement',
+    innerHTML: 'Choisissez un motif de déplacement'
   }
   const legend = createElement('legend', legendAttrs)
 
@@ -121,7 +121,7 @@ const createReasonFieldset = (reasonsData) => {
   const textAlert = createElement('p', textAlertAttrs)
 
   const textSubscribeReasonAttrs = {
-    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:',
+    innerHTML: 'certifie que mon déplacement est lié au motif suivant (cocher la case) autorisé par le décret n°2020-1310 du 29 octobre 2020 prescrivant les mesures générales nécessaires pour faire face à l\'épidémie de Covid19 dans le cadre de l\'état d\'urgence sanitaire  <a class="footnote" href="#footnote1">[1]</a>&nbsp;:'
   }
 
   const textSubscribeReason = createElement('p', textSubscribeReasonAttrs)
@@ -151,7 +151,7 @@ export function createForm () {
       const formGroup = createFormGroup({
         autofocus: index === 0,
         ...field,
-        name: field.key,
+        name: field.key
       })
 
       return formGroup

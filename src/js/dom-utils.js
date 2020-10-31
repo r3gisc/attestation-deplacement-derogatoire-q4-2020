@@ -8,7 +8,7 @@ const plainAttributes = [
   'maxlength',
   'min',
   'max',
-  'pattern',
+  'pattern'
 ]
 
 export const createElement = (tag, attrs) => {

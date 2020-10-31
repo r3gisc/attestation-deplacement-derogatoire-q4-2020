@@ -10,11 +10,11 @@ const ys = {
   sport_animaux: 358,
   convocation: 295,
   missions: 255,
-  enfants: 211,
+  enfants: 211
 }
 
 export async function generatePdf (profile, reasons, pdfBase) {
-  console.debug('generatePdf', {profile, reasons, pdfBase})
+  console.debug('generatePdf', { profile, reasons, pdfBase })
 
   const creationInstant = new Date()
   const creationDate = creationInstant.toLocaleDateString('fr-FR')
@@ -31,7 +31,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
     zipcode,
     city,
     datesortie,
-    heuresortie,
+    heuresortie
   } = profile
 
   const data = [
@@ -41,7 +41,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
     `Naissance: ${birthday} a ${placeofbirth}`,
     `Adresse: ${address} ${zipcode} ${city}`,
     `Sortie: ${datesortie} a ${heuresortie}`,
-    `Motifs: ${reasons}`,
+    `Motifs: ${reasons}`
   ].join(';\n ')
 
   const existingPdfBytes = await fetch(pdfBase).then((res) => res.arrayBuffer())
@@ -58,7 +58,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
     'déclaration',
     'déplacement',
     'officielle',
-    'gouvernement',
+    'gouvernement'
   ])
   pdfDoc.setProducer('DNUM/SDIT')
   pdfDoc.setCreator('')
@@ -87,7 +87,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
   if (!locationSize) {
     alert(
       'Le nom de la ville risque de ne pas être affiché correctement en raison de sa longueur. ' +
-        'Essayez d\'utiliser des abréviations ("Saint" en "St." par exemple) quand cela est possible.',
+        'Essayez d\'utiliser des abréviations ("Saint" en "St." par exemple) quand cela est possible.'
     )
     locationSize = 7
   }
@@ -113,7 +113,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
     x: page1.getWidth() - 156,
     y: 100,
     width: 92,
-    height: 92,
+    height: 92
   })
 
   pdfDoc.addPage()
@@ -122,7 +122,7 @@ export async function generatePdf (profile, reasons, pdfBase) {
     x: 50,
     y: page2.getHeight() - 350,
     width: 300,
-    height: 300,
+    height: 300
   })
 
   const pdfBytes = await pdfDoc.save()

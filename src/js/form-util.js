@@ -5,32 +5,32 @@ import { generatePdf } from './pdf-util'
 
 const conditions = {
   '#field-firstname': {
-    length: 1,
+    length: 1
   },
   '#field-lastname': {
-    length: 1,
+    length: 1
   },
   '#field-birthday': {
-    pattern: /^([0][1-9]|[1-2][0-9]|30|31)\/([0][1-9]|10|11|12)\/(19[0-9][0-9]|20[0-1][0-9]|2020)/g,
+    pattern: /^([0][1-9]|[1-2][0-9]|30|31)\/([0][1-9]|10|11|12)\/(19[0-9][0-9]|20[0-1][0-9]|2020)/g
   },
   '#field-placeofbirth': {
-    length: 1,
+    length: 1
   },
   '#field-address': {
-    length: 1,
+    length: 1
   },
   '#field-city': {
-    length: 1,
+    length: 1
   },
   '#field-zipcode': {
-    pattern: /\d{5}/g,
+    pattern: /\d{5}/g
   },
   '#field-datesortie': {
-    pattern: /\d{4}-\d{2}-\d{2}/g,
+    pattern: /\d{4}-\d{2}-\d{2}/g
   },
   '#field-heuresortie': {
-    pattern: /\d{2}:\d{2}/g,
-  },
+    pattern: /\d{2}:\d{2}/g
+  }
 }
 
 function validateAriaFields () {

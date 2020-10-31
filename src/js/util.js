@@ -5,7 +5,7 @@ export function generateQR (text) {
     errorCorrectionLevel: 'M',
     type: 'image/png',
     quality: 0.92,
-    margin: 1,
+    margin: 1
   }
   return QRCode.toDataURL(text, opts)
 }
@@ -30,6 +30,6 @@ export function addSlash (str) {
 
 export function addVersion (version) {
   document.getElementById(
-    'version',
+    'version'
   ).innerHTML = `${new Date().getFullYear()} - ${version}`
 }
